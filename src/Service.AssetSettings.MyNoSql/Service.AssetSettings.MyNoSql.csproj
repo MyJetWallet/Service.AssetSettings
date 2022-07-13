@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="MyJetWallet.Sdk.NoSql" Version="2.2.11" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Service.AssetSettings.Domain.Models\Service.AssetSettings.Domain.Models.csproj" />
+    </ItemGroup>
+
+</Project>
