@@ -22,6 +22,6 @@ namespace Service.AssetSettings.MyNoSql
             };
         }
 
-        public AssetSetting AssetSeting { get; private set; }
+        public AssetSetting AssetSeting { get; set; }
     }
 }
