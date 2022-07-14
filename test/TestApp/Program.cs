@@ -18,7 +18,7 @@ namespace TestApp
 
             var factory = new AssetSettingsClientFactory("http://localhost:5001");
             var client = factory.GetProfileService();
-
+            var x = await client.GetAllProfiles();
             //var resp = await  client.SayHelloAsync(new HelloRequest(){Name = "Alex"});
             //Console.WriteLine(resp?.Message);
 

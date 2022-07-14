@@ -24,9 +24,10 @@ namespace Service.AssetSettings.Services
         {
             var groups = await _profileWriter.GetAsync(ProfilesNoSqlEntity.GeneratePartitionKey(), ProfilesNoSqlEntity.GenerateRowKey());
 
-            if (groups.Profiles == null || !groups.Profiles.Any())
+            if (groups == null || groups.Profiles == null || !groups.Profiles.Any())
             {
-                await _profileWriter.InsertOrReplaceAsync(ProfilesNoSqlEntity.Create(groups.Profiles));
+                await _profileWriter.InsertOrReplaceAsync(ProfilesNoSqlEntity.Create(new List<string>() { "DEFAULT" }));
+                groups = await _profileWriter.GetAsync(ProfilesNoSqlEntity.GeneratePartitionKey(), ProfilesNoSqlEntity.GenerateRowKey());
             }
 
             return new ProfilesResponse()
